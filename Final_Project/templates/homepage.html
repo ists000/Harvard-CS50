@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <section class="container">
+        <form class="form" action="/homepage" method="post">
+          <div class="form-group">
+            <input type="text" class="form_input" name="note" placeholder="Write something here" required>
+            <select name="priority">
+              <option disabled selected>Priority</option>
+              {% for priority in priority_info %}
+                  <option value="{{ priority['priority_txt'] }}">{{ priority['priority_txt'] }}</option>
+              {% endfor %}
+            </select>
+            <select name="book">
+              <option disabled selected>Book</option>
+              {% for book in book_info %}
+                  <option value="{{ book['book_name'] }}">{{ book['book_name'] }}</option>
+              {% endfor %}
+            </select>
+            <input type="date" class="time_input" name="date" required>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+        <br>
+        <div>
+          <table>
+            <tr>
+              <th>Task</th>
+              <th>Due date</th>
+              <th>Priority</th>
+              <th>Book</th>
+              <th>Operate</th>
+            </tr>
+            {% for todo in todos %}
+            {% if todo.todo_id %}
+            <tr>
+              <td>{{ todo.note_txt }}</td>
+              <td>{{ todo.last_date }}</td>
+              <td>{{ todo.priority_txt }}</td>
+              <td>{{ todo.book_name }}</td>
+              <td>
+                <form action="{{ url_for('delete', todo_id=todo.todo_id) }}" method="post">
+                  <button type="submit">Delete</button>
+                </form>
+              </td>
+            </tr>
+            {% endif %}
+            {% else %}
+            <tr>
+              <td colspan="5">No tasks to display.</td>
+            </tr>
+            {% endfor %}
+          </table>
+      </div>
+      </section>
+{% endblock %}

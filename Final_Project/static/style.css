@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 16px;
+}
+
+.image-section {
+    height: 100vh;
+}
+
+.image-section .background-image {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://s2.loli.net/2023/12/14/dmj8CqP2LhilFyr.jpg') center/cover no-repeat;
+    z-index: -5;
+}
+
+
+.pic_content h1 {
+    position: relative;
+    top: -500px;
+    left: 660px;
+    font-size: 50px;
+    color: #f1f1f1;
+    font-family: 'Verdana', sans-serif;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: -450px;
+    margin-left: 750px;
+}
+
+
+/* Align inputs and the button on the same line */
+.form-group {
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+  justify-content: start; /* Aligns items to the start of the container */
+}
+
+/* Style for the input fields without borders */
+.form_input, .time_input {
+  border: none; /* Removes all borders */
+  outline: none; /* Removes the highlight effect on focus */
+  border-bottom: 2px solid #4CAF50; /* Adds a bottom border with a color */
+  padding: 10px;
+  margin-right: 10px; /* Adds some space to the right of the inputs */
+}
+
+/* Adjust the width of the inputs */
+.form_input {
+  flex-grow: 1; /* Allows the text input to grow and fill the space */
+}
+
+.time_input {
+  flex-grow: 0; /* Ensures the date input does not grow and only takes as much space as needed */
+}
+
+/* Style the submit button */
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Example button color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  flex-grow: 0; /* Prevents the button from growing and only takes as much space as needed */
+}
+
+/* Dropdown Styles */
+select {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: auto; /* Adjust as needed */
+    margin-right: 10px;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* No background color for the delete button column */
+td:last-child {
+    background-color: transparent !important;
+}
+
+/* Fit the delete button column to its content */
+td:last-child form {
+    width: max-content !important;
+    margin: 0 auto !important; /* Centering the form */
+}
+
+td:last-child {
+    text-align: center;
+    padding: 0;
+}
+
+/* Remove unnecessary padding from the form wrapping the button */
+td:last-child form {
+    padding: 0;
+}
+
+  th, td {
+    padding: 12px 15px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  
+  /* Button Styles */
+  button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: fit-content !important; /* Adjust button width */
+    margin: 0 !important; /* Remove margin */
+  }
+  
+  button:hover {
+    background-color: #367c39;
+  }
+  
